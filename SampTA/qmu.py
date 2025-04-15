@@ -13,17 +13,21 @@ def qmu(D_tilde, D, max_iter, r, q, seed=None):
         max_iter (int): Number of iterations to run.
         r (int): Target rank for the factorization.
         q (float): Quantile threshold for masking (typically set to 1 - corruption_rate).
+        seed (int):  Random number generator seed
 
     Returns:
         W (np.ndarray): Learned dictionary matrix.
         H (np.ndarray): Learned representation matrix.
         M (np.ndarray): Final masking matrix.
         errors (list): List of relative error values computed with respect to D_tilde.
+        runtime (float): Runtime of algorithm, not including relative error measurements
     '''
     m, n = D.shape
-    # Initialize factor matrices with nonnegative entries.
+
     if seed is not None:
         np.random.seed(seed)
+
+    # Initialize factor matrices with nonnegative entries.
     W = np.abs(np.random.randn(m, r))
     H = np.abs(np.random.randn(r, n))
 

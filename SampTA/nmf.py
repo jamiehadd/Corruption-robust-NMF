@@ -12,16 +12,22 @@ def nmf(X_ref, X_train, max_iter, r, seed=None):
         X_train (np.ndarray): Data used for training the model.
         max_iter (int): Number of iterations.
         r (int): Target rank for the factorization.
+        seed (int): Random number generator seed
 
     Returns:
         W (np.ndarray): Learned dictionary matrix.
         H (np.ndarray): Learned representation matrix.
+        (None): For consistency of return orderings. QMU returns the mask matrix here.
         errors (list): List of relative error values computed against X_ref.
+        runtime (float): Runtime of algorithm, not including relative error measurements
     """
     m, n = X_train.shape
-    # Initialize factor matrices with nonnegative entries.
+
+    # Set seed for consistency across experiments
     if seed is not None:
         np.random.seed(seed)
+
+    # Initialize factor matrices with nonnegative entries.
     W = np.abs(np.random.randn(m, r))
     H = np.abs(np.random.randn(r, n))
 

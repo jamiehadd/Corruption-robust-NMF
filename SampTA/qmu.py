@@ -1,6 +1,6 @@
 from common import relative_error
 import numpy as np
-
+from time import time
 
 def qmu(D_tilde, D, max_iter, r, q, seed=None):
     '''
@@ -29,19 +29,24 @@ def qmu(D_tilde, D, max_iter, r, q, seed=None):
 
     errors = []
     errors.append(relative_error(D_tilde, W, H))
+    runtime = 0
 
     for i in range(max_iter):
+        start_time = time()
+        epsilon = 1e-10
+
         # Construct the quantile mask
         M = quantile_mask(D, W, H, q)
-
-        epsilon = 1e-10
 
         # Update rules for W and H
         W = W * (( (M * D) @ H.T ) / ( ((M * (W @ H)) @ H.T) + epsilon ))
         H = H * (( W.T @ (M * D) ) / ( (W.T @ (M * (W @ H))) + epsilon ))
+
+        # Increment the runtime and calculate the relative error.
+        runtime += time() - start_time
         errors.append(relative_error(D_tilde, W, H))
 
-    return W, H, M, errors
+    return W, H, M, errors, runtime
 
 
 def quantile_mask(X, W, H, q):

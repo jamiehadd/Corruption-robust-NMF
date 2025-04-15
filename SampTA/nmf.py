@@ -1,6 +1,6 @@
 import numpy as np
 from common import relative_error
-
+from time import time
 
 def nmf(X_ref, X_train, max_iter, r, seed=None):
     """
@@ -26,13 +26,18 @@ def nmf(X_ref, X_train, max_iter, r, seed=None):
     H = np.abs(np.random.randn(r, n))
 
     errors = [relative_error(X_ref, W, H)]
+    runtime = 0
 
     for i in range(max_iter):
+        start_time = time()
         epsilon = 1e-10
+
         # Multiplicative update rules for standard NMF.
         W = W * ((X_train @ H.T) / (((W @ H) @ H.T) + epsilon))
         H = H * ((W.T @ X_train) / ((W.T @ (W @ H)) + epsilon))
 
+        # Increment the runtime and calculate the relative error.
+        runtime += time() - start_time
         errors.append(relative_error(X_ref, W, H))
 
-    return W, H, None, errors
+    return W, H, None, errors, runtime

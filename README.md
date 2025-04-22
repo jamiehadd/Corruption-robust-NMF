@@ -1,7 +1,7 @@
 # Corruption Robust NMF  
 _HADD Research Group: matH of Algorithms, Data, and Decisions_
 
-- **PI:** Jamie Haddock  
+- **PI:** Professor Jamie Haddock  
 - **Team Members:**  
   - Tyler Headley (Undergraduate Researcher)  
   - Luke Wang (Undergraduate Researcher) 

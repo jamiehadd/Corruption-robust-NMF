@@ -50,10 +50,10 @@ def make_gif(recs, out_path, total_duration=None, speedup_factor=8):
 
         # iteration label starting at 0
         ax.text(
-            0.18, 0.95, f"Iter {idx}",
+            0.035, 0.95, f"Iter {idx}",
             transform=ax.transAxes,
             fontsize=32, fontweight='bold', fontfamily='sans-serif',
-            color='white', verticalalignment='top', horizontalalignment='right'
+            color='white', verticalalignment='top', horizontalalignment='left'
         )
 
         # render to RGBA buffer and extract RGB channels correctly
@@ -67,7 +67,7 @@ def make_gif(recs, out_path, total_duration=None, speedup_factor=8):
     imageio.mimsave(out_path, frames, duration=durations_ms)
     print(f"Wrote {out_path}")
 
-# Generate whitespace-free, exponentially-timed GIFs with viridis cmap
+# Generate whitespace-free, exponentially-timed GIFs with plasma cmap
 make_gif(recs_nmf, "gifs/nmf_reconstruction.gif", speedup_factor=8)
 make_gif(recs_qmu, "gifs/qmu_reconstruction.gif", speedup_factor=8)
 

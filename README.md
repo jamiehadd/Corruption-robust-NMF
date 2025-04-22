@@ -9,4 +9,4 @@ _HADD Research Group: matH of Algorithms, Data, and Decisions_
 | **Standard NMF**                              | **QMU**                                       |
 |:-------------------------------------------------------:|:-------------------------------------------------------:|
 | <img src="gifs/nmf_reconstruction.gif" width="400"/>     | <img src="gifs/qmu_reconstruction.gif" width="400"/>     |
-| *Standard NMF reconstruction of corrupted swimmer image (corruption proportion $\beta = 0.05$).* | *QMU reconstruction of corrupted swimmer image (corruption proportion $\beta = 0.05$).*     
+| *Standard NMF reconstruction of corrupted swimmer image (corruption proportion &beta; = 0.05).* | *QMU reconstruction of corrupted swimmer image (corruption proportion &beta; = 0.05).*     

@@ -8,13 +8,27 @@ _HADD Research Group: matH of Algorithms, Data, and Decisions_
 
 Professor Jamie Haddock,
 
-<div style="display: flex; justify-content: space-around; align-items: flex-start;">
-  <figure>
-    <img src="gifs/nmf_reconstruction.gif" alt="NMF Reconstruction GIF" width="400"/>
-    <figcaption><strong>Figure 1.</strong>Standard NMF reconstruction of corrupted swimmer image</figcaption>
+<!-- GIF comparison -->
+<div style="display: flex; justify-content: center; align-items: flex-start; gap: 2rem;">
+
+  <figure style="margin: 0; text-align: center;">
+    <img
+      src="gifs/nmf_reconstruction.gif"
+      alt="Standard NMF reconstruction over iterations"
+      width="400"
+      style="display: block;"
+    />
+    <figcaption><strong>Figure 1.</strong> Standard NMF reconstruction of corrupted swimmer image</figcaption>
   </figure>
-  <figure>
-    <img src="gifs/qmu_reconstruction.gif" alt="QMU Reconstruction GIF" width="400"/>
-    <figcaption><strong>Figure 2.</strong>QMU reconstruction of corrupted swimmer image</figcaption>
+
+  <figure style="margin: 0; text-align: center;">
+    <img
+      src="gifs/qmu_reconstruction.gif"
+      alt="QMU reconstruction over iterations"
+      width="400"
+      style="display: block;"
+    />
+    <figcaption><strong>Figure 2.</strong> QMU reconstruction of corrupted swimmer image</figcaption>
   </figure>
+
 </div>

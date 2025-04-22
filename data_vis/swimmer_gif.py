@@ -10,6 +10,8 @@ from data_gen import load_swimmer_dataset
 from nmf import nmf
 from qmu import qmu
 
+np.random.seed(1)
+
 # Load the dataset
 D, D_tilde = load_swimmer_dataset(beta=0.05, corruption_scale=5)
 
@@ -68,6 +70,6 @@ def make_gif(recs, out_path, total_duration=None, speedup_factor=8):
     print(f"Wrote {out_path}")
 
 # Generate whitespace-free, exponentially-timed GIFs with plasma cmap
-make_gif(recs_nmf, "gifs/nmf_reconstruction.gif", speedup_factor=8)
-make_gif(recs_qmu, "gifs/qmu_reconstruction.gif", speedup_factor=8)
+make_gif(recs_nmf, "data_vis/gifs/nmf_reconstruction.gif", speedup_factor=8)
+make_gif(recs_qmu, "data_vis/gifs/qmu_reconstruction.gif", speedup_factor=8)
 

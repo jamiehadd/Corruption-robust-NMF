@@ -6,6 +6,10 @@ _HADD Research Group: matH of Algorithms, Data, and Decisions_
   - Tyler Headley (Undergraduate Researcher)  
   - Luke Wang (Undergraduate Researcher) 
 
+## Publications
+
+Z. Collins, J. Haddock, T. Headley, and L. Wang. Quantile multiplicative updates for corruption-robust nonnegative matrix factorization. Proc. Sampling Theory and Applications (SampTA), 2025. To appear.
+
 | **Standard NMF**                              | **QMU**                                       |
 |:-------------------------------------------------------:|:-------------------------------------------------------:|
 | <img src="data_vis/gifs/nmf_reconstruction.gif" width="400"/>     | <img src="data_vis/gifs/qmu_reconstruction.gif" width="400"/>     |
